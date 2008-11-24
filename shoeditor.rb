@@ -20,7 +20,7 @@ Shoes.app :title => 'Shoe_ditor v. 0.0.1', :width => 800, :height => 600 do
 			), :left => 20
 		end
 		flow do
-			@files_stack = stack :margin => 5, :width => 250, :height => 0.7 do
+			@files_stack = stack :margin => 5, :width => 250, :height => 400 do
 				background orange, :curve => 20
 			end
 			@bleah = stack :margin => 5, :width => -350, :top => -40  do
