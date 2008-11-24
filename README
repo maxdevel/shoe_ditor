@@ -1,0 +1,98 @@
+= Shoe_vie
+
+* http://github.com/maxdevel/shoe_ditor/wikis
+* mailto:
+
+== DESCRIPTION:
+
+shoe_ditor born from a (future) feature of shoe_vie.
+
+shoe_vie was inspired from simple-video and simple-downloader samples to play with events and video.
+
+A simple Shoes movie downloader, player, manager...
+
+== FEATURES:
+
+GUI usage
+
+1) Click on File.
+
+2) Choose a menu item:
+
+3) "Open a file" open a ask_open_file dialog, select a file. It will opened directly in the edit_box.
+3a) As an alternative, click on the "Open in editor" link to open the file in a external editor.
+
+4) "Open a Dir" will display the files in the current directory, for example:
+________________________________________________________________
+file number | file name 	| link to remove current file from list
+
+1 - 		  | README 	| -delete
+2 - 		  | shoeditor.rb | - delete
+________________________________________________________________
+
+4a) Click in file name link, will open the file directly in the edit_box.
+4b) Click in delete link, will remove the current file from list.
+4c) As an alternative, click on the "Open in editor" link to open the file in a external editor.
+
+== VISION:
+
+== MORE INFORMATION:
+
+== INSTALL
+
+Install Shoes:
+
+http://shoooes.net/downloads
+
+or
+
+http://github.com/why/shoes/tree/master
+
+Add shoes to your PATH
+
+Until now, just use:
+
+$ shoes shoeditor.rb
+
+Start knowing about Shoes
+
+http://github.com/why/shoes/wikis
+http://shoooes.net/
+http://help.shoooes.net/
+http://shoooes.net/tutorial/
+http://newwws.shoooes.net/
+
+== Known issues
+
+This is a very simple app. Then:
+
+1) Clicking two times in "Open a Dir", will display newly the files in current directory.
+FIXME:
+	- is_opened?
+	- ask for directory to open
+
+2) Opening a very long list of files, display only a portion of files in the current directory.
+FIXME:
+	- change to a edit_box, maybe, or a better solution.
+
+== LICENSE
+
+(The MIT License)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of 
+this software and associated documentation files (the "Software"), to deal in 
+the Software without restriction, including without limitation the rights to 
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+of the Software, and to permit persons to whom the Software is furnished to do 
+so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all 
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE 
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE 
+SOFTWARE.

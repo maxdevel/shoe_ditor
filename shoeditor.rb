@@ -36,7 +36,7 @@ Shoes.app :title => 'Shoe_ditor v. 0.0.1', :width => 800, :height => 600 do
 		@opened = !@opened
 	end
 	def open_dir
-		Dir[File.dirname(__FILE__) + '/*.*'].each_with_index do |file, i|
+		Dir[File.dirname(__FILE__) + '/*'].each_with_index do |file, i|
 			@files_stack.append do
 				para( i + @num, ' - ', link(file.gsub('./', '') ){@box.text =  File.read(file); open_in_editor(file)}, " - ",
 				link('delete'){|x| x.parent.remove})
@@ -50,8 +50,6 @@ Shoes.app :title => 'Shoe_ditor v. 0.0.1', :width => 800, :height => 600 do
 	end
 	def create_submenu
 		@f = flow:width=>110, :height=>50, :top=>5, :left=>45 do
-			#stroke rgb(230,230,0,256)
-			#strokewidth 5
 			fill rgb(250,250,100)
 			rect 0,0,100,100, 20
 			
