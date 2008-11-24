@@ -23,11 +23,11 @@ GUI usage
 3a) As an alternative, click on the "Open in editor" link to open the file in a external editor.
 
 4) "Open a Dir" will display the files in the current directory, for example:
-_____________________________________________________________________
-file number 	| file name 	| link to remove current file from list
-1 - 			| README		| -delete
-2 - 		  	| shoeditor.rb 	| - delete
-_____________________________________________________________________
+_________________________________________________________________
+file number  | file name      | link to remove current file from list
+1 -               | README        | -delete
+2 -               | shoeditor.rb  | - delete
+_________________________________________________________________
 
 4a) Click in file name link, will open the file directly in the edit_box.
 4b) Click in delete link, will remove the current file from list.
