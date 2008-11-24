@@ -17,7 +17,7 @@ Shoes.app :title => 'Shoe_ditor v. 0.0.1', :width => 800, :height => 600 do
 						@opened = !@opened
 					end
 				end
-			)
+			), :left => 20
 		end
 		flow do
 			@files_stack = stack :margin => 5, :width => 250, :height => 0.7 do
