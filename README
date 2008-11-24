@@ -74,6 +74,10 @@ FIXME:
 2) Opening a very long list of files, display only a portion of files in the current directory.
 FIXME:
 	- change to a edit_box, maybe, or a better solution.
+	
+3) Do not save the file edited in shoe_ditor.
+FIXME:
+	- implement a simple "save" feature? Maybe...
 
 == LICENSE
 
