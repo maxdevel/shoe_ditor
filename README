@@ -5,6 +5,7 @@
 
 == LAST CHANGES
 
+- implemented a better visualization of files, simply put :scroll => true to stack
 - implemented a 'edit in local' function (when loaded, the file is locked - see PHILOSOPHY)
 WARNING: NO UNDO
 - implemented a 'run' function (to be tested a lot)
@@ -84,6 +85,8 @@ This is a very simple app. Then:
 FIXME:
 	- is_opened?
 	- ask for directory to open
+
+DONE:
 
 2) Opening a very long list of files, display only a portion of files in the current directory.
 FIXME:
