@@ -63,16 +63,19 @@ Shoes.app :title => 'Shoe_ditor v. 0.0.1', :width => 800, :height => 600 do
 		@opened = !@opened
 	end
 	def manage_file(file)
+		
 		@manage_file_para.text = link('open in editor'){system "#@editor #{file}"},
 			" | ",
 			link('edit in local'){@display_file_content_box.state = @display_file_content_box.state ? nil : 'readonly'}, 
 			" | ",
-			#link('save'){system "shoes #{file}"},
-			link('run'){system "`$PATH;/usr/local/My/Git/ruby/Shoes/shoes/dist/shoes #{file}`"}, 
+			link('run'){system "shoes #{file}"},
+			#link('run'){system "`$PATH;/usr/local/My/Git/ruby/Shoes/shoes/dist/shoes #{file}`"}, 
 			" | ",
-			link('save'){system "#@editor #{file}"}
+			link('save'){save_file(file)}
 	end
 	def save_file(file)
-		
+		puts "Saving"
+		file = ask_save_file
+		open(file, 'wb'){|f| f.puts @display_file_content_box.text}  if file
 	end
 end
