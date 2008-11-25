@@ -25,7 +25,9 @@ shoe_vie was inspired from simple-video and simple-downloader samples to play wi
 A simple Shoes movie downloader, player, manager...
 
 == PHILOSOPHY
-shoe_ditor provide a way to 
+Although provide a simple way to edit a file, shoe_ditor is not intended as a full in place editor.
+It  provide a way to show multiple files, to take a glance. 
+Then, is natural, a feature to open the file which must be hard edited in a external editor.
 
 == FEATURES:
 
