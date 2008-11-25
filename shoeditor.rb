@@ -65,7 +65,7 @@ Shoes.app :title => 'Shoe_ditor v. 0.0.1', :width => 800, :height => 600 do
 	def manage_file(file)
 		@manage_file_para.text = link('open in editor'){system "#@editor #{file}"},
 			" | ",
-			link('edit in local'){system "#@editor #{file}"}, 
+			link('edit in local'){@display_file_content_box.state = @display_file_content_box.state ? nil : 'readonly'}, 
 			" | ",
 			link('run'){`shoes #{file}`}, 
 			" | ",
