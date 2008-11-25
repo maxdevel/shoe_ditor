@@ -25,20 +25,20 @@ Shoes.app :title => 'Shoe_ditor v. 0.0.1', :width => 800, :height => 600 do
 			end
 			@bleah = stack :margin => 5, :width => -350, :top => -40  do
 				@open_editor = para :width => 350
-				@box = edit_box( :width => 540, :height => 400, :state => 'readonly')
+				@display_file_content_box = edit_box( :width => 540, :height => 400, :state => 'readonly')
 			end
 		end
 	end
 	def open_file
 		file = ask_open_file
-		@box.text = File.read(file)
+		@display_file_content_box.text = File.read(file)
 		open_in_editor(file)
 		@opened = !@opened
 	end
 	def open_dir
 		Dir[File.dirname(__FILE__) + '/*'].each_with_index do |file, i|
 			@files_stack.append do
-				para( i + @num, ' - ', link(file.gsub('./', '') ){@box.text =  File.read(file); open_in_editor(file)}, " - ",
+				para( i + @num, ' - ', link(file.gsub('./', '') ){@display_file_content_box.text =  File.read(file); open_in_editor(file)}, " - ",
 				link('delete'){|x| x.parent.remove})
 			end
 			
