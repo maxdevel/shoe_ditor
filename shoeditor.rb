@@ -25,7 +25,7 @@ Shoes.app :title => 'Shoe_ditor v. 0.0.1', :width => 800, :height => 600 do
 			end
 			@bleah = stack :margin => 5, :width => -350, :top => -40  do
 				@open_editor = para :width => 350
-				@box = edit_box( :width => 540, :height => 400)
+				@box = edit_box( :width => 540, :height => 400, :state => 'readonly')
 			end
 		end
 	end
