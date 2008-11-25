@@ -38,7 +38,7 @@ Shoes.app :title => 'Shoe_ditor v. 0.0.1', :width => 800, :height => 600 do
 	def open_dir
 		Dir[File.dirname(__FILE__) + '/*'].each_with_index do |file, i|
 			@files_stack.append do
-				para( i + @num, ' - ', link(file.gsub('./', '') ){@display_file_content_box.text =  File.read(file); open_in_editor(file)}, " - ",
+				para( i + @num, ' - ', link(file.gsub('./', '') ){@display_file_content_box.text =  File.read(file); manage_file(file)}, " - ",
 				link('delete'){|x| x.parent.remove})
 			end
 			
@@ -62,10 +62,16 @@ Shoes.app :title => 'Shoe_ditor v. 0.0.1', :width => 800, :height => 600 do
 		end
 		@opened = !@opened
 	end
-	def open_in_editor(file)
-		@open_editor.text = link('open in editor'){system "#@editor #{file}"}
+	def manage_file(file)
+		@open_editor.text = link('open in editor'){system "#@editor #{file}"},
+			" | ",
+			link('edit in local'){system "#@editor #{file}"}, 
+			" | ",
+			link('run'){`shoes #{file}`}, 
+			" | ",
+			link('save'){system "#@editor #{file}"}
 	end
-	def paginate
+	def save_file(file)
 		
 	end
 end
