@@ -24,7 +24,7 @@ Shoes.app :title => 'Shoe_ditor v. 0.0.1', :width => 800, :height => 600 do
 				background orange, :curve => 20
 			end
 			@bleah = stack :margin => 5, :width => -350, :top => -40  do
-				@open_editor = para :width => 350
+				@manage_file_para = para :width => 350
 				@display_file_content_box = edit_box( :width => 540, :height => 400, :state => 'readonly')
 			end
 		end
@@ -63,7 +63,7 @@ Shoes.app :title => 'Shoe_ditor v. 0.0.1', :width => 800, :height => 600 do
 		@opened = !@opened
 	end
 	def manage_file(file)
-		@open_editor.text = link('open in editor'){system "#@editor #{file}"},
+		@manage_file_para.text = link('open in editor'){system "#@editor #{file}"},
 			" | ",
 			link('edit in local'){system "#@editor #{file}"}, 
 			" | ",
