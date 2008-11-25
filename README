@@ -5,6 +5,8 @@
 
 == LAST CHANGES
 
+- now open a specific directory ask_open_folder.
+YET DO NOT FILTER FILES IN DIR (load everything)
 - implemented a better visualization of files, simply put :scroll => true to stack
 - implemented a 'edit in local' function (when loaded, the file is locked - see PHILOSOPHY)
 WARNING: NO UNDO

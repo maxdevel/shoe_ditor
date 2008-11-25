@@ -35,13 +35,25 @@ Shoes.app :title => 'Shoe_ditor v. 0.0.1', :width => 800, :height => 600 do
 		open_in_editor(file)
 		@opened = !@opened
 	end
-	def open_dir
+	def open_current_dir
 		Dir[File.dirname(__FILE__) + '/*'].each_with_index do |file, i|
 			@files_stack.append do
 				para( i + @num, ' - ', link(file.gsub('./', '') ){@display_file_content_box.text =  File.read(file); manage_file(file)}, " - ",
 				link('delete'){|x| x.parent.remove})
 			end
 			
+		end
+		@opened = !@opened
+	end
+	def open_a_dir
+		dir = ask_open_folder
+		Dir.open(dir).each_with_index do |file, i|
+			unless ((file.eql?'.') |(file.eql?'..') )
+				@files_stack.append do
+					para( i + @num, ' - ', link(file.gsub('./', '') ){@display_file_content_box.text =  File.read(file); manage_file(file)}, " - ",
+					link('delete'){|x| x.parent.remove})
+				end
+			end
 		end
 		@opened = !@opened
 	end
@@ -55,10 +67,10 @@ Shoes.app :title => 'Shoe_ditor v. 0.0.1', :width => 800, :height => 600 do
 			
 			inscription ">> ", link("Open a file"){open_file; clear_menu_sub},
 				"\n",
-				">> ", link("Open current dir"){open_dir; clear_menu_sub},
+				">> ", link("Open current dir"){open_current_dir; clear_menu_sub},
 				"\n",
-				#">> ", link("Open a specific dir - not implemented yet"){open_dir; clear_menu_sub}
-				">> ", ("Open a specific dir\n- not implemented yet")
+				">> ", link("Open a specific dir"){open_a_dir; clear_menu_sub}
+				#">> ", ("Open a specific dir\n- not implemented yet")
 		end
 		@opened = !@opened
 	end
@@ -71,9 +83,9 @@ Shoes.app :title => 'Shoe_ditor v. 0.0.1', :width => 800, :height => 600 do
 			link('run'){system "shoes #{file}"},
 			#link('run'){system "`$PATH;/usr/local/My/Git/ruby/Shoes/shoes/dist/shoes #{file}`"}, 
 			" | ",
-			link('save'){save_file(file)}
+			link('save'){save_file}
 	end
-	def save_file(file)
+	def save_file
 		puts "Saving"
 		file = ask_save_file
 		open(file, 'wb'){|f| f.puts @display_file_content_box.text}  if file
