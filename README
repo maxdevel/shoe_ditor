@@ -3,6 +3,18 @@
 * http://github.com/maxdevel/shoe_ditor/wikis
 * mailto:
 
+== LAST CHANGES
+
+- implemented a 'edit in local' function (when loaded, the file is locked - see PHILOSOPHY)
+WARNING: NO UNDO
+- implemented a 'run' function (to be tested a lot)
+- implemented a 'save' function
+
+TODO
+- refresh the files list (to open a new version of modified file in editor)
+- do not repeat the files already loaded (if not modified -internally, externally)
+- Uhm, I do no remember :D
+
 == DESCRIPTION:
 
 shoe_ditor born from a (future) feature of shoe_vie.
@@ -10,6 +22,9 @@ shoe_ditor born from a (future) feature of shoe_vie.
 shoe_vie was inspired from simple-video and simple-downloader samples to play with events and video.
 
 A simple Shoes movie downloader, player, manager...
+
+== PHILOSOPHY
+shoe_ditor provide a way to 
 
 == FEATURES:
 
