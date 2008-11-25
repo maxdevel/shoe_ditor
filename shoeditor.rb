@@ -49,13 +49,16 @@ Shoes.app :title => 'Shoe_ditor v. 0.0.1', :width => 800, :height => 600 do
 		@f.clear
 	end
 	def create_submenu
-		@f = flow:width=>110, :height=>50, :top=>5, :left=>45 do
+		@f = flow:width=>300, :height=>150, :top=>5, :left=>45 do
 			fill rgb(250,250,100)
-			rect 0,0,100,100, 20
+			rect 0,0,300,100, 20
 			
 			inscription ">> ", link("Open a file"){open_file; clear_menu_sub},
 				"\n",
-				">> ", link("Open a dir"){open_dir; clear_menu_sub}
+				">> ", link("Open current dir"){open_dir; clear_menu_sub},
+				"\n",
+				#">> ", link("Open a specific dir - not implemented yet"){open_dir; clear_menu_sub}
+				">> ", ("Open a specific dir - not implemented yet")
 		end
 		@opened = !@opened
 	end
