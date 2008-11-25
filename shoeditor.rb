@@ -67,7 +67,8 @@ Shoes.app :title => 'Shoe_ditor v. 0.0.1', :width => 800, :height => 600 do
 			" | ",
 			link('edit in local'){@display_file_content_box.state = @display_file_content_box.state ? nil : 'readonly'}, 
 			" | ",
-			link('run'){`shoes #{file}`}, 
+			#link('save'){system "shoes #{file}"},
+			link('run'){system "`$PATH;/usr/local/My/Git/ruby/Shoes/shoes/dist/shoes #{file}`"}, 
 			" | ",
 			link('save'){system "#@editor #{file}"}
 	end
